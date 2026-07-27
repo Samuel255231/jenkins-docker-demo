@@ -7,7 +7,7 @@ pipeline {
     }
 
     tools {
-        maven 'Maven'
+        maven 'Maven-3.9.16'
     }
 
     stages {
@@ -43,7 +43,6 @@ pipeline {
                     usernameVariable: 'DOCKER_USER',
                     passwordVariable: 'DOCKER_PASS'
                 )]) {
-
                     bat '''
                     docker login -u %DOCKER_USER% -p %DOCKER_PASS%
                     docker push %IMAGE_NAME%:%IMAGE_TAG%
@@ -51,11 +50,9 @@ pipeline {
                 }
             }
         }
-
     }
 
     post {
-
         success {
             echo 'Pipeline exécutée avec succès.'
         }
@@ -67,6 +64,5 @@ pipeline {
         always {
             cleanWs()
         }
-
     }
 }
