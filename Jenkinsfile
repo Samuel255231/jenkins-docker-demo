@@ -53,16 +53,59 @@ pipeline {
     }
 
     post {
-        success {
-            echo 'Pipeline exécutée avec succès.'
-        }
+
+    success {
+        echo 'Pipeline exécutée avec succès.'
+
+        mail(
+            to: 'rakotonandrasanasamuel5@gmail.com',
+            subject: "SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+            body: """
+        Bonjour,
+
+        La pipeline Jenkins a réussi.
+
+        Projet : ${env.JOB_NAME}
+        Build : ${env.BUILD_NUMBER}
+        Statut : SUCCESS
+
+        Voir les détails :
+        ${env.BUILD_URL}
+
+        Cordialement,
+        Jenkins
+        """
+                )
+            }
+
 
         failure {
             echo 'La pipeline a échoué.'
-        }
 
-        always {
-            cleanWs()
+            mail(
+                to: 'rakotonandrasanasamuel5@gmail.com',
+                subject: "FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: """
+        Bonjour,
+
+        La pipeline Jenkins a échoué.
+
+        Projet : ${env.JOB_NAME}
+        Build : ${env.BUILD_NUMBER}
+        Statut : FAILED
+
+        Voir les logs :
+        ${env.BUILD_URL}
+
+        Cordialement,
+        Jenkins
+        """
+                )
+            }
+
+
+            always {
+                cleanWs()
+            }
         }
-    }
 }
