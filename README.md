@@ -620,9 +620,3 @@ Le projet permet :
 ✅ Notification email en cas d'échec  
 
 ---
-
-# Auteur
-
-Projet réalisé dans le cadre du TP2 :
-
-**Jenkins + Docker + Spring Boot CI/CD**
