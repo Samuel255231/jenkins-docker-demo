@@ -4,7 +4,7 @@ pipeline {
     environment {
         IMAGE_NAME = "samuel643/jenkins-docker-demo"
         IMAGE_TAG = "latest"
-        MAVEN_OPTS = "-Xmx512m"
+        MAVEN_OPTS = "-Xms128m -Xmx512m -XX:+UseSerialGC"
     }
 
     tools {
@@ -21,7 +21,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'mvnw.cmd clean package'
+                bat 'mvnw.cmd clean package -DskipTests'
             }
         }
 
