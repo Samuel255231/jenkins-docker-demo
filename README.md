@@ -566,7 +566,7 @@ git add .
 Créer un commit :
 
 ```bash
-git commit -m "Modification test Jenkins"
+git commit -m "Modification test"
 ```
 
 Envoyer :
