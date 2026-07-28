@@ -566,7 +566,7 @@ git add .
 Créer un commit :
 
 ```bash
-git commit -m "Modification test "
+git commit -m "Modification test"
 ```
 
 Envoyer :
