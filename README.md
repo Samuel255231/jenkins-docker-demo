@@ -295,7 +295,7 @@ Global Tool Configuration
 
 Configurer :
 
-## JDK 
+## JDK 17
 
 Nom :
 
