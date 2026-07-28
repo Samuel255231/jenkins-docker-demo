@@ -4,7 +4,7 @@ pipeline {
     environment {
         IMAGE_NAME = "samuel643/jenkins-docker-demo"
         IMAGE_TAG = "latest"
-        MAVEN_OPTS = "-Xms128m -Xmx512m -XX:+UseSerialGC"
+        MAVEN_OPTS = "-Xms128m -Xmx512m"
     }
 
     tools {
