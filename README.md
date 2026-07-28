@@ -1,4 +1,4 @@
-# Jenkins Docker Demos
+# Jenkins Docker Demo
 
 Projet de démonstration CI/CD avec **Spring Boot**, **Maven**, **Docker**, **Jenkins** et **GitHub**.
 
